@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <textarea id="texto" rows="4" cols="50" placeholder="Escribe tu mensaje aqui..."></textarea>
+  <br>
+  <button onclick="reproducirTexto()">Reproducir</button>
+</body>
+<script>
+  function reproducirTexto() {
+    let texto = document.getElementById('texto').value;
+
+    let sintetizador = window.speechSynthesis;
+
+    let mensaje = new SpeechSynthesisUtterance(texto);
+
+    mensaje.lang = 'es-Es';
+
+    sintetizador.speak(mensaje);
+  }
+</script>
+
+</html>
